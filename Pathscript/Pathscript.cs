@@ -17,7 +17,7 @@ namespace Pathscript
 
     public class PScript
     {
-        private static Regex regArray = new Regex("\\[([0-9+])\\]");
+        private static Regex regArray = new Regex("\\[(.+)\\]");
 
         public static object Eval(object context, string src)
         {

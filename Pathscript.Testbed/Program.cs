@@ -9,6 +9,11 @@ namespace Pathscript.Testbed
     class Foo
     {
         public int[] a = new int[] { 1, 2, 3, 4 };
+
+        public Dictionary<string, string> b = new Dictionary<string, string>()
+        {
+            ["asdf"] = "ASDF"
+        };
     }
     class Program
     {
@@ -16,7 +21,7 @@ namespace Pathscript.Testbed
         {
             var f = new Foo();
 
-            Console.WriteLine(PScript.Eval(f, "a[1]"));
+            Console.WriteLine(PScript.Eval(f, "b[\"asdf\"]"));
         }
     }
 }
