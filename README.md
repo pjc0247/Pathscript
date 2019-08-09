@@ -1,5 +1,5 @@
 # Pathscript
-Simple script to retrive value with its path
+Simple script to retrive value via its path
 
 ```cs
 var foo = new Foo();
