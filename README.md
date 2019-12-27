@@ -7,6 +7,8 @@ foo.bar = 1234;
 
 // 1234
 PScript.Eval(foo, "bar");
+// also this can be accepted
+foo.Eval<int>("bar");
 ```
 
 
