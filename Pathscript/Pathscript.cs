@@ -11,8 +11,10 @@ namespace Pathscript
     enum LiteralType
     {
         Integer,
+        Float,
         Character,
-        String
+        String,
+        Bool
     }
 
     public class PScript
@@ -93,6 +95,12 @@ namespace Pathscript
                 return new Tuple<LiteralType, object>(
                     LiteralType.Character, str[1]);
             }
+            if (str == "true") return new Tuple<LiteralType, object>(LiteralType.Bool, true);
+            if (str == "false") return new Tuple<LiteralType, object>(LiteralType.Bool, false);
+
+            float f;
+            if (str[-1] == 'f' && float.TryParse(str, out f))
+                return new Tuple<LiteralType, object>(LiteralType.Float, f);
 
             int n;
             if (int.TryParse(str, out n))
